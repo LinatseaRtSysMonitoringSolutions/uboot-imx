@@ -9,4 +9,10 @@ config SYS_VENDOR
 config SYS_CONFIG_NAME
 	default "mx6ul_var_dart"
 
+config ENV_SIZE
+	default 0x4000
+
+config ENV_OFFSET
+	default 0x20000
+
 endif

@@ -284,8 +284,7 @@
 #define CONFIG_SYS_MMC_ENV_PART		0	/* user area */
 
 #if defined(CONFIG_ENV_IS_IN_MMC)
-#define CONFIG_ENV_OFFSET		(14 * SZ_64K)
-#define CONFIG_ENV_SIZE			SZ_8K
+/* offset and size are defined in KConfig */
 #elif defined(CONFIG_ENV_IS_IN_NAND)
 #define CONFIG_ENV_OFFSET		0x400000
 #define CONFIG_ENV_SIZE			SZ_128K
