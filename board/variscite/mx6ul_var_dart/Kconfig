@@ -15,4 +15,8 @@ config ENV_SIZE
 config ENV_OFFSET
 	default 0x20000
 
+config IMX_WATCHDOG
+	bool "IMX watchdog"
+	default y
+
 endif
