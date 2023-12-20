@@ -256,6 +256,11 @@ static iomux_v3_cfg_t const uart1_pads[] = {
 	MX6_PAD_UART1_RX_DATA__UART1_DCE_RX | MUX_PAD_CTRL(UART_PAD_CTRL),
 };
 
+static iomux_v3_cfg_t const uart7_pads[] = {
+	MX6_PAD_LCD_DATA16__UART7_DCE_TX | MUX_PAD_CTRL(UART_PAD_CTRL),
+	MX6_PAD_LCD_DATA17__UART7_DCE_RX | MUX_PAD_CTRL(UART_PAD_CTRL),
+};
+
 static iomux_v3_cfg_t const usdhc1_pads[] = {
 	MX6_PAD_SD1_CLK__USDHC1_CLK | MUX_PAD_CTRL(USDHC_PAD_CTRL),
 	MX6_PAD_SD1_CMD__USDHC1_CMD | MUX_PAD_CTRL(USDHC_PAD_CTRL),
@@ -341,7 +346,14 @@ static void setup_gpmi_nand(void)
 
 static void setup_iomux_uart(void)
 {
+#ifdef CONFIG_DART_SERIAL_CONSOLE_UART1
 	imx_iomux_v3_setup_multiple_pads(uart1_pads, ARRAY_SIZE(uart1_pads));
+#endif
+
+#ifdef CONFIG_DART_SERIAL_CONSOLE_UART7
+	imx_iomux_v3_setup_multiple_pads(uart7_pads, ARRAY_SIZE(uart7_pads));
+#endif
+
 }
 
 static struct fsl_esdhc_cfg usdhc_cfg[2];

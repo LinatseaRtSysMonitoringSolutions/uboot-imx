@@ -19,4 +19,15 @@ config IMX_WATCHDOG
 	bool "IMX watchdog"
 	default y
 
+choice
+	prompt "Serial Console UART"
+	default DART_CONSOLE_UART1
+
+config DART_SERIAL_CONSOLE_UART1
+	bool "UART1"
+config DART_SERIAL_CONSOLE_UART7
+	bool "UART7"
+
+endchoice
+
 endif
