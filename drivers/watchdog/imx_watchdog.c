@@ -34,8 +34,11 @@ void hw_watchdog_init(void)
 #endif
 	timeout = (CONFIG_WATCHDOG_TIMEOUT_MSECS / 500) - 1;
 	writew(WCR_WDZST | WCR_WDBG | WCR_WDE | WCR_WDT | WCR_SRS |
-		WCR_WDA | SET_WCR_WT(timeout), &wdog->wcr);
+		WCR_WDA | WCR_WDW | SET_WCR_WT(timeout), &wdog->wcr);
 	hw_watchdog_reset();
+
+	printf("imx_watchdog: WCR_WDW set !\n");
+
 }
 #endif
 
