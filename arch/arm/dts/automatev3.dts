@@ -1,0 +1,11 @@
+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+// Copyright (C) 2017 Jagan Teki <jteki@openedev.com>
+
+/dts-v1/;
+
+#include "imx6ull.dtsi"
+
+/ {
+	model = "AutomateV3";
+	compatible = "rtsys,imx6ull-automatev3", "fsl,imx6ull";
+};
