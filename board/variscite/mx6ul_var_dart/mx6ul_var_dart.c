@@ -845,8 +845,10 @@ int board_init(void)
 	setup_gpmi_nand();
 #endif
 
+#ifdef CONFIG_HW_WATCHDOG
 	puts("Enabling IMX watchdog\n");
 	hw_watchdog_init();
+#endif
 
 	return 0;
 }
