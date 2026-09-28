@@ -333,7 +333,7 @@ int part_get_info_by_type(struct blk_desc *dev_desc, int part, int part_type,
 #endif
 
 		if (part_type == PART_TYPE_UNKNOWN) {
-			drv = part_driver_lookup_type(dev_desc);
+			drv = part_driver_lookup_type(part_type);
 		} else {
 			drv = part_driver_get_type(part_type);
 		}
